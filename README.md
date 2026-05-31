@@ -1,20 +1,20 @@
-# Payroll Calculator Microservice
+Payroll Calculator Microservice
 A TypeScript microservice that calculates gross-to-net pay for employees.
 
-## Features
+Features
 - Federal income tax calculation using 2024 progressive tax brackets
 - Multi-state tax support (GA, CA, NY, TX, FL, and more)
 - Pre-tax deductions: 401(k) and health insurance
 - FICA withholding: Social Security and Medicare
 - Supports weekly, biweekly, semimonthly, and monthly pay frequencies
 
-## Tech Stack
+Stack
 TypeScript, Node.js, Express, Jest
 
-## Running the API
-npx ts-node src/server.ts
+Running the API
+npx ts node src/server.ts
 
-POST /calculate — calculates gross-to-net pay for an employee
+POST /calculate calculates gross-to-net pay for an employee
 
 Example request:
 curl -X POST http://localhost:3000/calculate -H "Content-Type: application/json" -d "{\"grossSalary\": 60000, \"filingStatus\": \"single\", \"state\": \"GA\", \"k401ContributionPercent\": 0.06, \"healthInsuranceFlat\": 200, \"payFrequency\": \"biweekly\"}"
@@ -32,9 +32,9 @@ Example response:
   "netPay": 1406.62
 }
 
-## Running Tests
+Running Tests
 npm test
 
-## Example
+Example
 Input: $60,000 salary, single, Georgia, 6% 401k, $200 health insurance, biweekly
 Output: ~$1,407 net pay per paycheck
